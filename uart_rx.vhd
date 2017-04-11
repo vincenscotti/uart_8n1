@@ -22,7 +22,7 @@ end uart_rx;
 architecture behavioural of uart_rx is
 
 	constant clock_div : integer := clock_freq / baud_rate / 16;
-	constant clock_div_bits : integer := integer(log2(real(clock_div)));
+	constant clock_div_bits : integer := integer(ceil(log2(real(clock_div))));
 
 	signal clock_counter : unsigned(clock_div_bits downto 0);
 

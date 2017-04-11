@@ -22,7 +22,7 @@ end uart_tx;
 architecture behavioral of uart_tx is
 
 	constant clock_div : integer := clock_freq / baud_rate;
-	constant clock_div_bits : integer := integer(log2(real(clock_div)));
+	constant clock_div_bits : integer := integer(ceil(log2(real(clock_div))));
 
 	signal clock_counter : unsigned(clock_div_bits downto 0);
 	signal clock_counter_rst : std_logic;
